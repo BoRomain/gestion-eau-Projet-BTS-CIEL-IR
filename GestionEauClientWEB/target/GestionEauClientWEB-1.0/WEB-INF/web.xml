@@ -77,4 +77,28 @@
         <description>Role that no user can have</description>
         <role-name>nobody</role-name>
     </security-role>
+    
+    <!-- JERSEY -->
+    <servlet>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <!-- Service or resources to be placed in the following package --> 
+            <param-value>lml.snir.gestioneau.metier.rest.serveur, lml.snir.rest.server</param-value>
+        </init-param>
+   
+        <!-- Application configuration, used for registering resources like filters  -->
+        <init-param>
+            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- Url mapping, usage-http://domainname:port/appname/api/ -->
+    <servlet-mapping>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
 </web-app>

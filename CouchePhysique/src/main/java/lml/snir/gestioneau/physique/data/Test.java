@@ -64,7 +64,7 @@ public class Test {
     private void populate() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         
-        //PhysiqueDataFactory.getDrop().drop();
+        PhysiqueDataFactory.getDrop().drop();
 
         // Générer un mode aléatoire avec RandomValueGenerator
         String modeAleatoire = RandomValueGenerator.generateRandomMode();
